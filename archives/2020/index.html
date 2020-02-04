@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-center-simple.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -53,25 +60,22 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=5.1.4" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="Jcy Wong" />
 
 
 
@@ -79,12 +83,15 @@
 
 
 
-<meta name="description" content="人最重要是找到属于自己的世界">
+
+
+
+<meta name="description" content="究竟拿了时间换了什么">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Jcy&#39;s Notes">
+<meta property="og:title" content="Jcy&#39;s Blog">
 <meta property="og:url" content="https://jcywong.github.io/archives/2020/index.html">
-<meta property="og:site_name" content="Jcy&#39;s Notes">
-<meta property="og:description" content="人最重要是找到属于自己的世界">
+<meta property="og:site_name" content="Jcy&#39;s Blog">
+<meta property="og:description" content="究竟拿了时间换了什么">
 <meta property="article:author" content="Jcy Wong">
 <meta name="twitter:card" content="summary">
 
@@ -96,7 +103,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"display":"post","offset":15,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -122,7 +129,7 @@
 
 
 
-  <title>归档 | Jcy's Notes</title>
+  <title>归档 | Jcy's Blog</title>
   
 
 
@@ -138,10 +145,8 @@
 
   
   
-    
-  
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container  page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -152,12 +157,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jcy's Notes</span>
+        <span class="site-title">Jcy's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -294,7 +299,7 @@
         
           
           <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
+            <h2 class="archive-year" id="archive-year-2020">2020</h2>
           </div>
         
         
@@ -304,7 +309,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2020/02/01/hello-world/" itemprop="url">
               
@@ -312,7 +317,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -359,6 +364,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -370,11 +377,11 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
+                src="/images/avatar.png"
                 alt="Jcy Wong" />
             
               <p class="site-author-name" itemprop="name">Jcy Wong</p>
-              <p class="site-description motion-element" itemprop="description">人最重要是找到属于自己的世界</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -391,6 +398,15 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
 
@@ -398,6 +414,16 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jcywong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -491,6 +517,8 @@
   
 
 
+  
+
 
 
 
@@ -531,6 +559,11 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -555,14 +588,6 @@
 
   
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
 
   
 
@@ -591,6 +616,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Du9PMFQLxoRLojtmptXTRt3l-gzGzoHsz',
+        appKey: 'LuR807iuEJSVp5HjODfNGOUk',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

@@ -3,6 +3,12 @@
   <entry>
     <title>Hello World</title>
     <url>/2020/02/01/hello-world/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<blockquote class="blockquote-center"><p>I’m Jcy！ </p>
+</blockquote>
+
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
   </entry>
 </search>
