@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jcywong.github.io/</loc>
+    <lastmod>2024-01-21T00:35:57+08:00</lastmod>
+  </url><url>
+    <loc>https://jcywong.github.io/post/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
+    <lastmod>2024-01-21T00:35:57+08:00</lastmod>
+  </url><url>
+    <loc>https://jcywong.github.io/post/</loc>
+    <lastmod>2024-01-21T00:35:57+08:00</lastmod>
+  </url><url>
     <loc>https://jcywong.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,13 +20,9 @@
     <loc>https://jcywong.github.io/contact/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jcywong.github.io/</loc>
-  </url><url>
     <loc>https://jcywong.github.io/categories/</loc>
   </url><url>
     <loc>https://jcywong.github.io/tags/index/</loc>
-  </url><url>
-    <loc>https://jcywong.github.io/post/</loc>
   </url><url>
     <loc>https://jcywong.github.io/series/</loc>
   </url><url>
