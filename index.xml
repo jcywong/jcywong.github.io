@@ -6,7 +6,6 @@
     <description>Recent content on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jcywong.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
@@ -14,13 +13,6 @@
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       <guid>https://jcywong.github.io/archives/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>Emoji Support</title>
-      <link>https://jcywong.github.io/post/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://jcywong.github.io/post/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
