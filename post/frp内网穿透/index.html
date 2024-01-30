@@ -38,10 +38,6 @@
 
 
 
-
-
-
-
 <html
   class="not-ready lg:text-base"
   style="--bg: #faf8f1"
@@ -81,7 +77,7 @@ bindPort = 7000 vhostHTTPPort = 8080 如果需要配置 HTTPS 代理，还需要
 内网服务器
 在 frpc.toml 文件中添加以下内容，确保设置了正确的服务器 IP 地址、本地 Web 服务监听端口和自定义域名：
 serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34; type = &#34;http&#34; localPort = 80 customDomains = [&#34;www.yourdomain.com&#34;] [[proxies]] name = &#34;web2&#34; type = &#34;http&#34; localPort = 8080 customDomains = [&#34;www." />
-  <meta name="author" content="Lee" />
+  <meta name="author" content="JcyWong" />
   
 
   
@@ -103,7 +99,7 @@ serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34
   
   
   
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/ef333c1203724d1cb48104b2679529bb?s=160&amp;d=identicon" />
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/7542634?v=4" />
   
   
 
@@ -113,7 +109,7 @@ serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34
   
   <link rel="preload" as="image" href="https://jcywong.github.io/github.svg" />
   
-  <link rel="preload" as="image" href="https://jcywong.github.io/instagram.svg" />
+  <link rel="preload" as="image" href="https://jcywong.github.io/rss.svg" />
   
   
 
@@ -284,22 +280,6 @@ serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34
   >
     
     
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      >
-      
-      <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
-        >Contact</a
-      >
-      
-    </nav>
-    
 
     
     <nav
@@ -309,7 +289,7 @@ serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34
       <a
         class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./twitter.svg)"
-        href="https://twitter.com/nanxiaobei"
+        href="https://twitter.com/Jcy_Wong"
         target="_blank"
         rel="me"
       >
@@ -319,7 +299,7 @@ serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34
       <a
         class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./github.svg)"
-        href="https://github.com/nanxiaobei"
+        href="https://github.com/jcywong"
         target="_blank"
         rel="me"
       >
@@ -328,12 +308,12 @@ serverAddr = &#34;x.x.x.x&#34; serverPort = 7000 [[proxies]] name = &#34;web&#34
       
       <a
         class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/nan.xiaobei"
+        style="--url: url(./rss.svg)"
+        href="https://jcywong.github.io/index.xml"
         target="_blank"
-        rel="me"
+        rel="alternate"
       >
-        instagram
+        rss
       </a>
       
     </nav>
