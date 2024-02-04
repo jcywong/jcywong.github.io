@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jcy&#39;s life</title>
-    <link>https://jcywong.github.io/</link>
+    <link>https://iamjcy.life/</link>
     <description>Recent content on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Jan 2024 00:35:57 +0800</lastBuildDate>
-    <atom:link href="https://jcywong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iamjcy.life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frp内网穿透</title>
-      <link>https://jcywong.github.io/post/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+      <link>https://iamjcy.life/post/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
       <pubDate>Sun, 21 Jan 2024 00:35:57 +0800</pubDate>
-      <guid>https://jcywong.github.io/post/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+      <guid>https://iamjcy.life/post/frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
       <description>项目地址：&#xA;https://github.com/fatedier/frp&#xA;官方文档：&#xA;frp&#xA;背景 公司网络没有公网IP，无法将内网服务器的服务通过互联网供给在上海、北京等员工使用，因此需要通过内网穿透服务，通过具备公网IP的搬瓦工服务器，安全、便捷地将内网服务暴露到公网。&#xA;安装配置 内网和搬瓦工服务器系统均为Ubuntu.&#xA;选择对应版本，我这里为frp_0.53.2_linux_amd64.tar.gz&#xA;下载&#xA;wget https://github.com/fatedier/frp/releases/download/v0.53.2/frp_0.53.2_linux_amd64.tar.gz 解压缩&#xA;tar -xzvf frp_0.53.2_linux_amd64.tar.gz 编辑配置文件&#xA;搬瓦工服务器&#xA;在 frps.toml 文件中添加以下内容，以指定 HTTP 请求的监听端口为 8080：&#xA;bindPort = 7000 vhostHTTPPort = 8080 如果需要配置 HTTPS 代理，还需要设置 vhostHTTPSPort。&#xA;内网服务器&#xA;在 frpc.toml 文件中添加以下内容，确保设置了正确的服务器 IP 地址、本地 Web 服务监听端口和自定义域名：&#xA;serverAddr = &amp;#34;x.x.x.x&amp;#34; serverPort = 7000 [[proxies]] name = &amp;#34;web&amp;#34; type = &amp;#34;http&amp;#34; localPort = 80 customDomains = [&amp;#34;www.yourdomain.com&amp;#34;] [[proxies]] name = &amp;#34;web2&amp;#34; type = &amp;#34;http&amp;#34; localPort = 8080 customDomains = [&amp;#34;www.</description>
     </item>
     <item>
       <title></title>
-      <link>https://jcywong.github.io/archives/</link>
+      <link>https://iamjcy.life/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://jcywong.github.io/archives/</guid>
+      <guid>https://iamjcy.life/archives/</guid>
       <description></description>
     </item>
     <item>
       <title>Contact</title>
-      <link>https://jcywong.github.io/contact/</link>
+      <link>https://iamjcy.life/contact/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://jcywong.github.io/contact/</guid>
+      <guid>https://iamjcy.life/contact/</guid>
       <description> github.com/jcywong </description>
     </item>
   </channel>

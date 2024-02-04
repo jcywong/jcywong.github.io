@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>index on Jcy&#39;s life</title>
-    <link>https://jcywong.github.io/tags/index/</link>
+    <link>https://iamjcy.life/tags/index/</link>
     <description>Recent content in index on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <atom:link href="https://jcywong.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iamjcy.life/tags/index/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Posts</title>
-      <link>https://jcywong.github.io/post/</link>
+      <link>https://iamjcy.life/post/</link>
       <pubDate>Sun, 21 Jan 2024 00:35:57 +0800</pubDate>
-      <guid>https://jcywong.github.io/post/</guid>
+      <guid>https://iamjcy.life/post/</guid>
       <description></description>
     </item>
   </channel>
