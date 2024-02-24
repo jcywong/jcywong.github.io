@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Feb 2024 22:02:16 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Feb 2024 08:58:12 +0800</lastBuildDate>
     <atom:link href="https://iamjcy.life/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的稍后阅读工具：Notion</title>
+      <link>https://iamjcy.life/post/%E6%88%91%E7%9A%84%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7notion/</link>
+      <pubDate>Sat, 24 Feb 2024 08:58:12 +0800</pubDate>
+      <guid>https://iamjcy.life/post/%E6%88%91%E7%9A%84%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7notion/</guid>
+      <description>背景 Notion：all in one&#xA;我习惯将资料统一归档到Notion，因此在手机微信公众号内容作为稍后阅读保存到Notion就比较麻烦，需要文章链接，再打开Notion，再打开到对应的Datebase，新建一条数据，编辑标题，并粘贴链接。&#xA;框架介绍 iOS/Android 复制网页链接，通过快捷指令/ Automate发送给Worker Worker收到链接后，获取链接地址的文章标题，将标题及URL通过Notion API保存到指定的Datebase 服务端搭建 Notion API 创建Notion Integration及获取Notion API key 在Integration 页面点击「Create new integration」可以创建Integration ； 填写workspace、Name，点击「Submit」； 在Secrets页面，点击「Show」,即可复制获取Notion API key。 授权 Notion Integration 点击 Datebase 右上角的「…」； 再点击「Connect to」； 选择你的 Integration Name。 CF Worker 在左侧导航栏中选择「Workers 和 Pages」;&#xA;点击「创建应用程序」；&#xA;点击「创建Worker」;&#xA;填写名称「notion」,点击部署；&#xA;点击编辑代码；&#xA;删除所有代码，粘贴以下代码,并在sendToNotion函数中修改3个地方，&#xA;database_id ：网页端打开对应的Database,查看网页链接，在「?v=」后的32个字符就是database_id ；&#xA;Authorization：之前Integration中获得的Notion API key，以secret_开头；&#xA;properties：属性结构则需跟你的Database结构一致，通过postman发送get命令获取你的Database结构，修改相应内容。或者依据我的Datebase建立，则不需要修改；&#xA;addEventListener(&amp;#39;fetch&amp;#39;, event =&amp;gt; { event.respondWith(handleRequest(event.request)) }) async function handleRequest(request) { if (request.method !== &amp;#39;GET&amp;#39;) { return new Response(&amp;#39;Only GET requests are allowed.</description>
+    </item>
     <item>
       <title>Cf Telegraph图床</title>
       <link>https://iamjcy.life/post/cf-telegraph%E5%9B%BE%E5%BA%8A/</link>

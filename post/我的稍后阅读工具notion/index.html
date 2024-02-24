@@ -1,0 +1,596 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>我的稍后阅读工具：Notion - Jcy&#39;s life</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="背景 Notion：all in one
+我习惯将资料统一归档到Notion，因此在手机微信公众号内容作为稍后阅读保存到Notion就比较麻烦，需要文章链接，再打开Notion，再打开到对应的Datebase，新建一条数据，编辑标题，并粘贴链接。
+框架介绍 iOS/Android 复制网页链接，通过快捷指令/ Automate发送给Worker Worker收到链接后，获取链接地址的文章标题，将标题及URL通过Notion API保存到指定的Datebase 服务端搭建 Notion API 创建Notion Integration及获取Notion API key 在Integration 页面点击「Create new integration」可以创建Integration ； 填写workspace、Name，点击「Submit」； 在Secrets页面，点击「Show」,即可复制获取Notion API key。 授权 Notion Integration 点击 Datebase 右上角的「…」； 再点击「Connect to」； 选择你的 Integration Name。 CF Worker 在左侧导航栏中选择「Workers 和 Pages」;
+点击「创建应用程序」；
+点击「创建Worker」;
+填写名称「notion」,点击部署；
+点击编辑代码；
+删除所有代码，粘贴以下代码,并在sendToNotion函数中修改3个地方，
+database_id ：网页端打开对应的Database,查看网页链接，在「?v=」后的32个字符就是database_id ；
+Authorization：之前Integration中获得的Notion API key，以secret_开头；
+properties：属性结构则需跟你的Database结构一致，通过postman发送get命令获取你的Database结构，修改相应内容。或者依据我的Datebase建立，则不需要修改；
+addEventListener(&#39;fetch&#39;, event =&gt; { event.respondWith(handleRequest(event.request)) }) async function handleRequest(request) { if (request.method !== &#39;GET&#39;) { return new Response(&#39;Only GET requests are allowed." />
+  <meta name="author" content="JcyWong" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://iamjcy.life/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/7542634?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/github.svg" />
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://iamjcy.life/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://iamjcy.life/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://iamjcy.life/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.121.2">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="我的稍后阅读工具：Notion">
+<meta itemprop="description" content="背景 Notion：all in one
+我习惯将资料统一归档到Notion，因此在手机微信公众号内容作为稍后阅读保存到Notion就比较麻烦，需要文章链接，再打开Notion，再打开到对应的Datebase，新建一条数据，编辑标题，并粘贴链接。
+框架介绍 iOS/Android 复制网页链接，通过快捷指令/ Automate发送给Worker Worker收到链接后，获取链接地址的文章标题，将标题及URL通过Notion API保存到指定的Datebase 服务端搭建 Notion API 创建Notion Integration及获取Notion API key 在Integration 页面点击「Create new integration」可以创建Integration ； 填写workspace、Name，点击「Submit」； 在Secrets页面，点击「Show」,即可复制获取Notion API key。 授权 Notion Integration 点击 Datebase 右上角的「…」； 再点击「Connect to」； 选择你的 Integration Name。 CF Worker 在左侧导航栏中选择「Workers 和 Pages」;
+点击「创建应用程序」；
+点击「创建Worker」;
+填写名称「notion」,点击部署；
+点击编辑代码；
+删除所有代码，粘贴以下代码,并在sendToNotion函数中修改3个地方，
+database_id ：网页端打开对应的Database,查看网页链接，在「?v=」后的32个字符就是database_id ；
+Authorization：之前Integration中获得的Notion API key，以secret_开头；
+properties：属性结构则需跟你的Database结构一致，通过postman发送get命令获取你的Database结构，修改相应内容。或者依据我的Datebase建立，则不需要修改；
+addEventListener(&#39;fetch&#39;, event =&gt; { event.respondWith(handleRequest(event.request)) }) async function handleRequest(request) { if (request.method !== &#39;GET&#39;) { return new Response(&#39;Only GET requests are allowed."><meta itemprop="datePublished" content="2024-02-24T08:58:12+08:00" />
+<meta itemprop="dateModified" content="2024-02-24T08:58:12+08:00" />
+<meta itemprop="wordCount" content="374">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="我的稍后阅读工具：Notion" />
+<meta property="og:description" content="背景 Notion：all in one
+我习惯将资料统一归档到Notion，因此在手机微信公众号内容作为稍后阅读保存到Notion就比较麻烦，需要文章链接，再打开Notion，再打开到对应的Datebase，新建一条数据，编辑标题，并粘贴链接。
+框架介绍 iOS/Android 复制网页链接，通过快捷指令/ Automate发送给Worker Worker收到链接后，获取链接地址的文章标题，将标题及URL通过Notion API保存到指定的Datebase 服务端搭建 Notion API 创建Notion Integration及获取Notion API key 在Integration 页面点击「Create new integration」可以创建Integration ； 填写workspace、Name，点击「Submit」； 在Secrets页面，点击「Show」,即可复制获取Notion API key。 授权 Notion Integration 点击 Datebase 右上角的「…」； 再点击「Connect to」； 选择你的 Integration Name。 CF Worker 在左侧导航栏中选择「Workers 和 Pages」;
+点击「创建应用程序」；
+点击「创建Worker」;
+填写名称「notion」,点击部署；
+点击编辑代码；
+删除所有代码，粘贴以下代码,并在sendToNotion函数中修改3个地方，
+database_id ：网页端打开对应的Database,查看网页链接，在「?v=」后的32个字符就是database_id ；
+Authorization：之前Integration中获得的Notion API key，以secret_开头；
+properties：属性结构则需跟你的Database结构一致，通过postman发送get命令获取你的Database结构，修改相应内容。或者依据我的Datebase建立，则不需要修改；
+addEventListener(&#39;fetch&#39;, event =&gt; { event.respondWith(handleRequest(event.request)) }) async function handleRequest(request) { if (request.method !== &#39;GET&#39;) { return new Response(&#39;Only GET requests are allowed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iamjcy.life/post/%E6%88%91%E7%9A%84%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7notion/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-24T08:58:12+08:00" />
+<meta property="article:modified_time" content="2024-02-24T08:58:12+08:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="我的稍后阅读工具：Notion"/>
+<meta name="twitter:description" content="背景 Notion：all in one
+我习惯将资料统一归档到Notion，因此在手机微信公众号内容作为稍后阅读保存到Notion就比较麻烦，需要文章链接，再打开Notion，再打开到对应的Datebase，新建一条数据，编辑标题，并粘贴链接。
+框架介绍 iOS/Android 复制网页链接，通过快捷指令/ Automate发送给Worker Worker收到链接后，获取链接地址的文章标题，将标题及URL通过Notion API保存到指定的Datebase 服务端搭建 Notion API 创建Notion Integration及获取Notion API key 在Integration 页面点击「Create new integration」可以创建Integration ； 填写workspace、Name，点击「Submit」； 在Secrets页面，点击「Show」,即可复制获取Notion API key。 授权 Notion Integration 点击 Datebase 右上角的「…」； 再点击「Connect to」； 选择你的 Integration Name。 CF Worker 在左侧导航栏中选择「Workers 和 Pages」;
+点击「创建应用程序」；
+点击「创建Worker」;
+填写名称「notion」,点击部署；
+点击编辑代码；
+删除所有代码，粘贴以下代码,并在sendToNotion函数中修改3个地方，
+database_id ：网页端打开对应的Database,查看网页链接，在「?v=」后的32个字符就是database_id ；
+Authorization：之前Integration中获得的Notion API key，以secret_开头；
+properties：属性结构则需跟你的Database结构一致，通过postman发送get命令获取你的Database结构，修改相应内容。或者依据我的Datebase建立，则不需要修改；
+addEventListener(&#39;fetch&#39;, event =&gt; { event.respondWith(handleRequest(event.request)) }) async function handleRequest(request) { if (request.method !== &#39;GET&#39;) { return new Response(&#39;Only GET requests are allowed."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://iamjcy.life/post/%E6%88%91%E7%9A%84%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7notion/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://iamjcy.life"
+      >Jcy&#39;s life</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/Jcy_Wong"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/jcywong"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://iamjcy.life/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">我的稍后阅读工具：Notion</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 24, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="背景">背景</h1>
+<p><strong>Notion：all in one</strong></p>
+<p>我习惯将资料统一归档到Notion，因此在手机微信公众号内容作为稍后阅读保存到Notion就比较麻烦，需要文章链接，再打开Notion，再打开到对应的Datebase，新建一条数据，编辑标题，并粘贴链接。</p>
+<h1 id="框架介绍">框架介绍</h1>
+<p><img src="https://pic.iamjcy.life/file/3df0c2a6abe763424bacb.png" alt="Untitled"></p>
+<ol>
+<li>iOS/Android 复制网页链接，通过快捷指令/ Automate发送给Worker</li>
+<li>Worker收到链接后，获取链接地址的文章标题，将标题及URL通过Notion API保存到指定的Datebase</li>
+</ol>
+<h1 id="服务端搭建">服务端搭建</h1>
+<h2 id="notion-api">Notion API</h2>
+<h3 id="创建notion-integration及获取notion-api-key">创建N<strong>otion Integration及</strong>获取Notion API key</h3>
+<ol>
+<li>在<a href="https://www.notion.so/my-integrations">Integration</a> 页面点击「Create new integration」可以创建Integration ；</li>
+<li>填写<strong>workspace</strong>、<strong>Name</strong>，点击「<strong>Submit</strong>」；</li>
+<li>在Secrets页面，点击「<strong>Show</strong>」,即可复制获取Notion API key。</li>
+</ol>
+<h3 id="授权-notion-integration"><strong>授权 Notion Integration</strong></h3>
+<ol>
+<li>点击 Datebase 右上角的「…」；</li>
+<li>再点击「Connect to」；</li>
+<li>选择你的 Integration Name。</li>
+</ol>
+<h2 id="cf-worker">CF Worker</h2>
+<ol>
+<li>
+<p>在左侧导航栏中选择「Workers 和 Pages」;</p>
+</li>
+<li>
+<p>点击「创建应用程序」；</p>
+</li>
+<li>
+<p>点击「创建Worker」;</p>
+</li>
+<li>
+<p>填写名称「notion」,点击部署；</p>
+</li>
+<li>
+<p>点击编辑代码；</p>
+</li>
+<li>
+<p>删除所有代码，粘贴以下代码,并在<code>sendToNotion</code>函数中修改3个地方，</p>
+<ol>
+<li>
+<p><code>database_id</code> ：网页端打开对应的Database,查看网页链接，在「?v=」后的32个字符就是<code>database_id</code> ；</p>
+</li>
+<li>
+<p><code>Authorization</code>：之前Integration中获得的Notion API key，以secret_开头；</p>
+</li>
+<li>
+<p><code>properties</code>：属性结构则需跟你的Database结构一致，通过postman发送get命令获取你的Database结构，修改相应内容。或者依据我的Datebase建立，则不需要修改；</p>
+<p><img src="https://pic.iamjcy.life/file/b3025775493c798900e28.png" alt="Untitled"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;fetch&#39;</span>, <span style="color:#a6e22e">event</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">respondWith</span>(<span style="color:#a6e22e">handleRequest</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">request</span>))
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleRequest</span>(<span style="color:#a6e22e">request</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;GET&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Only GET requests are allowed.&#39;</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">405</span> })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 从请求的 URL 中获取要获取标题的 URL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">targetUrl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">searchParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;url&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">targetUrl</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 如果 URL 为空，则返回错误
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">targetUrl</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;URL parameter is missing.&#39;</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span> })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 发起对目标 URL 的 GET 请求
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">targetUrl</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">ok</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;Failed to fetch URL: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span>)
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 从响应中提取 HTML 内容
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">text</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 从 HTML 中提取标题
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">titleMatch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">html</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/&lt;title&gt;(.*?)&lt;\/title&gt;/i</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">titleMatch</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">titleMatch</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Title not found&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//微信公众号获取标题
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">title</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ogTitleMatch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">html</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/&lt;meta property=&#34;og:title&#34; content=&#34;([^&#34;]*)&#34; \/&gt;/i</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ogTitleMatch</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">ogTitleMatch</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">title</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 将标题发送到 Notion API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">sendToNotion</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">targetUrl</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 返回标题
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">title</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span> })
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 处理异常情况
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Error fetching URL.&#39;</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span> })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sendToNotion</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">url</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">parent</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//   database_id: &#34;YOUR_DATABASE_ID&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#34;database_id&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;XXXXXXXXX&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;properties&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;order&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;checkbox&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;URL&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">url</span>
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Tags&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;multi_select&#34;</span><span style="color:#f92672">:</span> []
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Name&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>                        {
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#34;content&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">title</span>
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    ]
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;children&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;object&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;block&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;bookmark&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;caption&#34;</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">url</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">notionApiUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://api.notion.com/v1/pages&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 发送 POST 请求到 Notion API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">notionApiUrl</span>, {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//   &#39;Authorization&#39;: &#39;Bearer YOUR_NOTION_API_KEY&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#e6db74">&#39;Authorization&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bearer secret_*******************&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Notion-Version&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2022-06-28&#39;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">newData</span>)
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 返回 Notion API 的响应
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">response</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 处理错误情况
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Error occurred: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>, { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span> })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>点击「保存并部署」；</p>
+</li>
+<li>
+<p>获取Worker的API地址（建议增加自己域名镜像绑定，自行搜索）</p>
+<p><img src="https://pic.iamjcy.life/file/f371fe16a902de34e8ba2.png" alt="Untitled"></p>
+</li>
+<li>
+<p>在浏览器中输入API地址加url参数即可实现在在Datebase中添加网页标题及URL，eg: <code>https://notion.xxxxxx.workers.dev/?url=https://www.baidu.com</code></p>
+</li>
+</ol>
+<h2 id="turning使用postman进行调试">Turning：使用postman进行调试</h2>
+<p><a href="https://www.postman.com/notionhq">Notion | Postman API Network</a></p>
+<h1 id="客户端使用">客户端使用</h1>
+<h2 id="ios快捷指令">iOS(快捷指令)</h2>
+<ol>
+<li>
+<p>获取快捷指令，<a href="https://www.icloud.com/shortcuts/1379cb6b07254607bc0001265635968b">链接</a></p>
+</li>
+<li>
+<p>修改Worker链接</p>
+<p><img src="https://pic.iamjcy.life/file/da55416f0cb6635ec7de5.png" alt="Untitled"></p>
+</li>
+<li>
+<p>在负一屏增加快捷指令</p>
+</li>
+</ol>
+<h2 id="androidautomate">Android（Automate）</h2>
+<ol>
+<li>
+<p>获取指令，<a href="https://pan.baidu.com/s/1_JhUilik825av-AmMKQMsw?pwd=t3va">链接</a></p>
+</li>
+<li>
+<p>修改Worker链接</p>
+<p><img src="https://pic.iamjcy.life/file/623f40c87031795b4b9f3.png" alt="Untitled"></p>
+<p><img src="https://pic.iamjcy.life/file/570ee5c6e2986845762e3.png" alt="Untitled"></p>
+</li>
+<li>
+<p>在下拉通知栏添加快捷菜单</p>
+</li>
+</ol>
+<h1 id="借鉴">借鉴</h1>
+<p><a href="https://sspai.com/post/73645">iOS 快捷指令搭配 Notion API，更快速地编辑内容 - 少数派</a></p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://iamjcy.life/post/cf-telegraph%E5%9B%BE%E5%BA%8A/"
+      ><span>Cf Telegraph图床</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://iamjcy.life">Jcy&#39;s life</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
