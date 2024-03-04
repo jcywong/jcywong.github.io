@@ -1,0 +1,475 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>优化老款Android TV：精简提速指南 - Jcy&#39;s life</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="背景 卧室电视是2019年购买的型号为小米L43M5-AD ，内存为1GB。过了5年，系统版本来到了1.3.130，现在打开电视到能操作需要经过约至少2分钟以上才能使用遥控器，导致卧室电视已经很久没有打开了。在过年期间想着可以抽空看看片子，因此有了此篇文章。
+【小米L43M5-AD】小米电视4A 43英寸青春版 全高清 蓝牙语音遥控 1GB&#43;8GB 人工智能网络液晶平板电视 L43M5-AD/L43M5-5A【行情 报价 价格 评测】-京东
+方案 Android设备优化不外乎换个rom，或者精简系统。奈何现在设备厂商的封闭，第三方rom越来越少，更别说TV的rom了。因此只能精简系统，移除预装应用程序、服务或者功能，以减少系统的负担，提高系统的响应速度和运行效率。
+实施 资源准备 下载ADB工具并解压，Android SDK Platform Tools；
+下载替换桌面APP存放于ADB解压后的目录下，当贝桌面 或者 Emotn UI ;
+下载对应系统的批处理程序存放于ADB解压后的目录下，Windows、MacOS；
+环境准备 **开启开发者模式：**设置 -&gt; 关于 -&gt; 产品型号 -&gt; 连续点击多次；
+**开启ADB调试：**设置 -&gt; 账号与安全 -&gt; ADB调试 -&gt; 允许；
+查询电视IP地址： 设置 -&gt; 关于 -&gt; 网络信息 -&gt; IPV4地址；
+操作 点开电脑的终端，使用cd命令切换到ADB目录下；
+在终端中输入adb connect 192.168.199.120 ；
+第一次连接会失败，需要在电视上允许调试；
+再次终端中输入adb connect 192.168.199.120；
+安装桌面app，在终端中输入 adb install ./XXX.apk XXX.apk为实际文件名称；
+执行批处理文件进行精简操作，window系统双击mitv.bat（未验证）执行即可，macos需要赋予脚本执行权限chmod &#43;x mitv.sh 然后运行脚本：./mitv.sh （已验证）；" />
+  <meta name="author" content="JcyWong" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://iamjcy.life/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/7542634?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/github.svg" />
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://iamjcy.life/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://iamjcy.life/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://iamjcy.life/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.121.2">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="优化老款Android TV：精简提速指南">
+<meta itemprop="description" content="背景 卧室电视是2019年购买的型号为小米L43M5-AD ，内存为1GB。过了5年，系统版本来到了1.3.130，现在打开电视到能操作需要经过约至少2分钟以上才能使用遥控器，导致卧室电视已经很久没有打开了。在过年期间想着可以抽空看看片子，因此有了此篇文章。
+【小米L43M5-AD】小米电视4A 43英寸青春版 全高清 蓝牙语音遥控 1GB&#43;8GB 人工智能网络液晶平板电视 L43M5-AD/L43M5-5A【行情 报价 价格 评测】-京东
+方案 Android设备优化不外乎换个rom，或者精简系统。奈何现在设备厂商的封闭，第三方rom越来越少，更别说TV的rom了。因此只能精简系统，移除预装应用程序、服务或者功能，以减少系统的负担，提高系统的响应速度和运行效率。
+实施 资源准备 下载ADB工具并解压，Android SDK Platform Tools；
+下载替换桌面APP存放于ADB解压后的目录下，当贝桌面 或者 Emotn UI ;
+下载对应系统的批处理程序存放于ADB解压后的目录下，Windows、MacOS；
+环境准备 **开启开发者模式：**设置 -&gt; 关于 -&gt; 产品型号 -&gt; 连续点击多次；
+**开启ADB调试：**设置 -&gt; 账号与安全 -&gt; ADB调试 -&gt; 允许；
+查询电视IP地址： 设置 -&gt; 关于 -&gt; 网络信息 -&gt; IPV4地址；
+操作 点开电脑的终端，使用cd命令切换到ADB目录下；
+在终端中输入adb connect 192.168.199.120 ；
+第一次连接会失败，需要在电视上允许调试；
+再次终端中输入adb connect 192.168.199.120；
+安装桌面app，在终端中输入 adb install ./XXX.apk XXX.apk为实际文件名称；
+执行批处理文件进行精简操作，window系统双击mitv.bat（未验证）执行即可，macos需要赋予脚本执行权限chmod &#43;x mitv.sh 然后运行脚本：./mitv.sh （已验证）；"><meta itemprop="datePublished" content="2024-03-04T23:08:53+08:00" />
+<meta itemprop="dateModified" content="2024-03-04T23:08:53+08:00" />
+<meta itemprop="wordCount" content="81">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="优化老款Android TV：精简提速指南" />
+<meta property="og:description" content="背景 卧室电视是2019年购买的型号为小米L43M5-AD ，内存为1GB。过了5年，系统版本来到了1.3.130，现在打开电视到能操作需要经过约至少2分钟以上才能使用遥控器，导致卧室电视已经很久没有打开了。在过年期间想着可以抽空看看片子，因此有了此篇文章。
+【小米L43M5-AD】小米电视4A 43英寸青春版 全高清 蓝牙语音遥控 1GB&#43;8GB 人工智能网络液晶平板电视 L43M5-AD/L43M5-5A【行情 报价 价格 评测】-京东
+方案 Android设备优化不外乎换个rom，或者精简系统。奈何现在设备厂商的封闭，第三方rom越来越少，更别说TV的rom了。因此只能精简系统，移除预装应用程序、服务或者功能，以减少系统的负担，提高系统的响应速度和运行效率。
+实施 资源准备 下载ADB工具并解压，Android SDK Platform Tools；
+下载替换桌面APP存放于ADB解压后的目录下，当贝桌面 或者 Emotn UI ;
+下载对应系统的批处理程序存放于ADB解压后的目录下，Windows、MacOS；
+环境准备 **开启开发者模式：**设置 -&gt; 关于 -&gt; 产品型号 -&gt; 连续点击多次；
+**开启ADB调试：**设置 -&gt; 账号与安全 -&gt; ADB调试 -&gt; 允许；
+查询电视IP地址： 设置 -&gt; 关于 -&gt; 网络信息 -&gt; IPV4地址；
+操作 点开电脑的终端，使用cd命令切换到ADB目录下；
+在终端中输入adb connect 192.168.199.120 ；
+第一次连接会失败，需要在电视上允许调试；
+再次终端中输入adb connect 192.168.199.120；
+安装桌面app，在终端中输入 adb install ./XXX.apk XXX.apk为实际文件名称；
+执行批处理文件进行精简操作，window系统双击mitv.bat（未验证）执行即可，macos需要赋予脚本执行权限chmod &#43;x mitv.sh 然后运行脚本：./mitv.sh （已验证）；" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iamjcy.life/post/%E4%BC%98%E5%8C%96%E8%80%81%E6%AC%BEandroidtv%E7%B2%BE%E7%AE%80%E6%8F%90%E9%80%9F%E6%8C%87%E5%8D%97/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-04T23:08:53+08:00" />
+<meta property="article:modified_time" content="2024-03-04T23:08:53+08:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="优化老款Android TV：精简提速指南"/>
+<meta name="twitter:description" content="背景 卧室电视是2019年购买的型号为小米L43M5-AD ，内存为1GB。过了5年，系统版本来到了1.3.130，现在打开电视到能操作需要经过约至少2分钟以上才能使用遥控器，导致卧室电视已经很久没有打开了。在过年期间想着可以抽空看看片子，因此有了此篇文章。
+【小米L43M5-AD】小米电视4A 43英寸青春版 全高清 蓝牙语音遥控 1GB&#43;8GB 人工智能网络液晶平板电视 L43M5-AD/L43M5-5A【行情 报价 价格 评测】-京东
+方案 Android设备优化不外乎换个rom，或者精简系统。奈何现在设备厂商的封闭，第三方rom越来越少，更别说TV的rom了。因此只能精简系统，移除预装应用程序、服务或者功能，以减少系统的负担，提高系统的响应速度和运行效率。
+实施 资源准备 下载ADB工具并解压，Android SDK Platform Tools；
+下载替换桌面APP存放于ADB解压后的目录下，当贝桌面 或者 Emotn UI ;
+下载对应系统的批处理程序存放于ADB解压后的目录下，Windows、MacOS；
+环境准备 **开启开发者模式：**设置 -&gt; 关于 -&gt; 产品型号 -&gt; 连续点击多次；
+**开启ADB调试：**设置 -&gt; 账号与安全 -&gt; ADB调试 -&gt; 允许；
+查询电视IP地址： 设置 -&gt; 关于 -&gt; 网络信息 -&gt; IPV4地址；
+操作 点开电脑的终端，使用cd命令切换到ADB目录下；
+在终端中输入adb connect 192.168.199.120 ；
+第一次连接会失败，需要在电视上允许调试；
+再次终端中输入adb connect 192.168.199.120；
+安装桌面app，在终端中输入 adb install ./XXX.apk XXX.apk为实际文件名称；
+执行批处理文件进行精简操作，window系统双击mitv.bat（未验证）执行即可，macos需要赋予脚本执行权限chmod &#43;x mitv.sh 然后运行脚本：./mitv.sh （已验证）；"/>
+
+  
+  
+  
+  <link rel="canonical" href="https://iamjcy.life/post/%E4%BC%98%E5%8C%96%E8%80%81%E6%AC%BEandroidtv%E7%B2%BE%E7%AE%80%E6%8F%90%E9%80%9F%E6%8C%87%E5%8D%97/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://iamjcy.life"
+      >Jcy&#39;s life</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/Jcy_Wong"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/jcywong"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://iamjcy.life/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">优化老款Android TV：精简提速指南</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 4, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="背景">背景</h1>
+<p>卧室电视是2019年购买的型号为小米L43M5-AD ，内存为1GB。过了5年，系统版本来到了1.3.130，现在打开电视到能操作需要经过约至少2分钟以上才能使用遥控器，导致卧室电视已经很久没有打开了。在过年期间想着可以抽空看看片子，因此有了此篇文章。</p>
+<p><a href="https://item.jd.com/7171106.html">【小米L43M5-AD】小米电视4A 43英寸青春版 全高清 蓝牙语音遥控 1GB+8GB 人工智能网络液晶平板电视 L43M5-AD/L43M5-5A【行情 报价 价格 评测】-京东</a></p>
+<p><img src="https://pic.iamjcy.life/file/b987a698dbb2497f59c13.jpg" alt="https://pic.iamjcy.life/file/b987a698dbb2497f59c13.jpg"></p>
+<h1 id="方案">方案</h1>
+<p>Android设备优化不外乎换个rom，或者精简系统。奈何现在设备厂商的封闭，第三方rom越来越少，更别说TV的rom了。因此只能精简系统，移除预装应用程序、服务或者功能，以减少系统的负担，提高系统的响应速度和运行效率。</p>
+<h1 id="实施">实施</h1>
+<h2 id="资源准备">资源准备</h2>
+<ol>
+<li>
+<p><strong>下载ADB工具并解压，</strong><a href="https://developer.android.google.cn/studio/releases/platform-tools">Android SDK Platform Tools</a>；</p>
+<p><img src="https://pic.iamjcy.life/file/c8ae78afd8949767497ce.png" alt="https://pic.iamjcy.life/file/c8ae78afd8949767497ce.png"></p>
+</li>
+<li>
+<p>下载替换桌面APP存放于ADB解压后的目录下，<a href="https://www.dangbei.com/zhuomian/">当贝桌面</a> 或者 <a href="https://app.emotn.com/ui/">Emotn UI</a> ;</p>
+<p><img src="https://pic.iamjcy.life/file/9a081c2ec79539e094bbf.png" alt="https://pic.iamjcy.life/file/9a081c2ec79539e094bbf.png"></p>
+<p><img src="https://pic.iamjcy.life/file/78a6a1258e36ece8455e1.png" alt="Emotn UI"></p>
+</li>
+<li>
+<p>下载对应系统的批处理程序存放于ADB解压后的目录下，<a href="https://github.com/jcywong/mitv_streamlined_system/blob/main/mitv.bat">Windows</a>、<a href="https://github.com/jcywong/mitv_streamlined_system/blob/main/mitv.sh">MacOS</a>；</p>
+</li>
+</ol>
+<h2 id="环境准备">环境准备</h2>
+<ol>
+<li>
+<p>**开启开发者模式：**设置 -&gt; 关于 -&gt; 产品型号 -&gt; 连续点击多次；</p>
+<p><img src="https://pic.iamjcy.life/file/10d7a2d9a767cc51bd88b.jpg" alt="https://pic.iamjcy.life/file/10d7a2d9a767cc51bd88b.jpg"></p>
+</li>
+<li>
+<p>**开启ADB调试：**设置 -&gt; 账号与安全 -&gt; ADB调试 -&gt; 允许；</p>
+<p><img src="https://pic.iamjcy.life/file/ad9f00eb824e19ec56d8f.png" alt="ADB"></p>
+</li>
+<li>
+<p><strong>查询电视IP地址：</strong> 设置 -&gt; 关于 -&gt; 网络信息 -&gt; IPV4地址；</p>
+<p><img src="https://pic.iamjcy.life/file/9a9fec41fa09c1785a2fb.jpg" alt="https://pic.iamjcy.life/file/9a9fec41fa09c1785a2fb.jpg"></p>
+</li>
+</ol>
+<h2 id="操作">操作</h2>
+<ol>
+<li>
+<p>点开电脑的终端，使用cd命令切换到ADB目录下；</p>
+</li>
+<li>
+<p>在终端中输入<code>adb connect 192.168.199.120</code> ；</p>
+<p><img src="https://pic.iamjcy.life/file/d58e1a49a7545408b6073.png" alt="https://pic.iamjcy.life/file/d58e1a49a7545408b6073.png"></p>
+</li>
+<li>
+<p>第一次连接会失败，需要在电视上允许调试；</p>
+<p><img src="https://pic.iamjcy.life/file/e75d3fe9c35cd66410888.png" alt="https://pic.iamjcy.life/file/e75d3fe9c35cd66410888.png"></p>
+</li>
+<li>
+<p>再次终端中输入<code>adb connect 192.168.199.120</code>；</p>
+<p><img src="https://pic.iamjcy.life/file/9c59f7a0e86223f083bf4.png" alt="https://pic.iamjcy.life/file/9c59f7a0e86223f083bf4.png"></p>
+</li>
+<li>
+<p>安装桌面app，在终端中输入 <code>adb install ./XXX.apk</code> XXX.apk为实际文件名称；</p>
+</li>
+<li>
+<p>执行批处理文件进行精简操作，window系统双击<code>mitv.bat</code>（未验证）执行即可，macos需要赋予脚本执行权限<code>chmod +x mitv.sh</code> 然后运行脚本：<code>./mitv.sh</code> （已验证）；</p>
+</li>
+<li>
+<p>重启电视（<strong>批处理中执行了卸载桌面，必须在重启电视前安装替换的桌面APP，否则重启后会黑屏</strong>）。</p>
+</li>
+</ol>
+<h1 id="总结">总结</h1>
+<p>优点：</p>
+<ul>
+<li>启动速度大大提升，操作很流畅；</li>
+<li>我使用的Emotn UI，界面很美观，很简洁；</li>
+<li>想要恢复很简单，通过设置中的恢复出厂设置即可；</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>Emotn UI无法切换输入源；</li>
+<li>卸载了应用商店，安装程序需要通过ADB安装。</li>
+</ul>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://iamjcy.life/post/%E6%88%91%E7%9A%84%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7notion/"
+      ><span>我的稍后阅读工具：Notion</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://iamjcy.life">Jcy&#39;s life</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

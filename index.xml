@@ -6,8 +6,15 @@
     <description>Recent content on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Feb 2024 08:58:12 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Mar 2024 23:08:53 +0800</lastBuildDate>
     <atom:link href="https://iamjcy.life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>优化老款Android TV：精简提速指南</title>
+      <link>https://iamjcy.life/post/%E4%BC%98%E5%8C%96%E8%80%81%E6%AC%BEandroidtv%E7%B2%BE%E7%AE%80%E6%8F%90%E9%80%9F%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 04 Mar 2024 23:08:53 +0800</pubDate>
+      <guid>https://iamjcy.life/post/%E4%BC%98%E5%8C%96%E8%80%81%E6%AC%BEandroidtv%E7%B2%BE%E7%AE%80%E6%8F%90%E9%80%9F%E6%8C%87%E5%8D%97/</guid>
+      <description>背景 卧室电视是2019年购买的型号为小米L43M5-AD ，内存为1GB。过了5年，系统版本来到了1.3.130，现在打开电视到能操作需要经过约至少2分钟以上才能使用遥控器，导致卧室电视已经很久没有打开了。在过年期间想着可以抽空看看片子，因此有了此篇文章。&#xA;【小米L43M5-AD】小米电视4A 43英寸青春版 全高清 蓝牙语音遥控 1GB+8GB 人工智能网络液晶平板电视 L43M5-AD/L43M5-5A【行情 报价 价格 评测】-京东&#xA;方案 Android设备优化不外乎换个rom，或者精简系统。奈何现在设备厂商的封闭，第三方rom越来越少，更别说TV的rom了。因此只能精简系统，移除预装应用程序、服务或者功能，以减少系统的负担，提高系统的响应速度和运行效率。&#xA;实施 资源准备 下载ADB工具并解压，Android SDK Platform Tools；&#xA;下载替换桌面APP存放于ADB解压后的目录下，当贝桌面 或者 Emotn UI ;&#xA;下载对应系统的批处理程序存放于ADB解压后的目录下，Windows、MacOS；&#xA;环境准备 **开启开发者模式：**设置 -&amp;gt; 关于 -&amp;gt; 产品型号 -&amp;gt; 连续点击多次；&#xA;**开启ADB调试：**设置 -&amp;gt; 账号与安全 -&amp;gt; ADB调试 -&amp;gt; 允许；&#xA;查询电视IP地址： 设置 -&amp;gt; 关于 -&amp;gt; 网络信息 -&amp;gt; IPV4地址；&#xA;操作 点开电脑的终端，使用cd命令切换到ADB目录下；&#xA;在终端中输入adb connect 192.168.199.120 ；&#xA;第一次连接会失败，需要在电视上允许调试；&#xA;再次终端中输入adb connect 192.168.199.120；&#xA;安装桌面app，在终端中输入 adb install ./XXX.apk XXX.apk为实际文件名称；&#xA;执行批处理文件进行精简操作，window系统双击mitv.bat（未验证）执行即可，macos需要赋予脚本执行权限chmod +x mitv.sh 然后运行脚本：./mitv.sh （已验证）；</description>
+    </item>
     <item>
       <title>我的稍后阅读工具：Notion</title>
       <link>https://iamjcy.life/post/%E6%88%91%E7%9A%84%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7notion/</link>
