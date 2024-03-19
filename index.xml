@@ -6,8 +6,15 @@
     <description>Recent content on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Mar 2024 23:08:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2024 23:10:44 +0800</lastBuildDate>
     <atom:link href="https://iamjcy.life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小白智能相机云台版故障修复记录</title>
+      <link>https://iamjcy.life/post/%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%E4%BA%91%E5%8F%B0%E7%89%88%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 19 Mar 2024 23:10:44 +0800</pubDate>
+      <guid>https://iamjcy.life/post/%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%E4%BA%91%E5%8F%B0%E7%89%88%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/</guid>
+      <description>背景 周末的时候对小白智能相机云台版进行了重启，结果无法正常运行。现象为黄灯常亮，长按reset键无法恢复出厂设置。&#xA;由于产品历史久远，无法通过售后查找资料，便通过互联网查找到相关资料见链接，变开始了本次折腾记录。&#xA;下载固件 小白智能相机云台版的型号为cmsxj16a，便对照资料获得固件地址为 http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip 通过下载工具将固件下载存放，并解压备用 格式化存储卡 将小白智能相机上的存储卡取下，放入读卡器，并插入电脑；&#xA;通过mac自带的 磁盘工具 将存储卡格式化成 FAT32 文件格式，参数默认即可（Windows用户亦可通过系统右键格式化将存储卡格式化成 FAT32 文件格式）；&#xA;复制固件至存储卡 将固件解压后的tf_recovery.img 和 tf_update.img 两个文件直接复制到存储卡根目录中 操作设备恢复 通过针孔按压 小白智能相机 的 reset 键3秒 ，黄灯熄灭； 小白智能相机断电 插入复制完固件的存储卡 小白智能相机通电 此时 小白智能相机 状态变为 黄灯常亮，等待固件恢复 直到 小白智能相机 状态变为 黄灯闪烁，并伴有 等待连接提示音 总结 常用设备固件关闭自动更新，避免固件出现bug; 固件可备份一份至云盘，防止企业倒闭，无法找到资源 </description>
+    </item>
     <item>
       <title>优化老款Android TV：精简提速指南</title>
       <link>https://iamjcy.life/post/%E4%BC%98%E5%8C%96%E8%80%81%E6%AC%BEandroidtv%E7%B2%BE%E7%AE%80%E6%8F%90%E9%80%9F%E6%8C%87%E5%8D%97/</link>

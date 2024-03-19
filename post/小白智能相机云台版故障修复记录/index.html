@@ -1,0 +1,397 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>小白智能相机云台版故障修复记录 - Jcy&#39;s life</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="背景 周末的时候对小白智能相机云台版进行了重启，结果无法正常运行。现象为黄灯常亮，长按reset键无法恢复出厂设置。
+由于产品历史久远，无法通过售后查找资料，便通过互联网查找到相关资料见链接，变开始了本次折腾记录。
+下载固件 小白智能相机云台版的型号为cmsxj16a，便对照资料获得固件地址为 http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip 通过下载工具将固件下载存放，并解压备用 格式化存储卡 将小白智能相机上的存储卡取下，放入读卡器，并插入电脑；
+通过mac自带的 磁盘工具 将存储卡格式化成 FAT32 文件格式，参数默认即可（Windows用户亦可通过系统右键格式化将存储卡格式化成 FAT32 文件格式）；
+复制固件至存储卡 将固件解压后的tf_recovery.img 和 tf_update.img 两个文件直接复制到存储卡根目录中 操作设备恢复 通过针孔按压 小白智能相机 的 reset 键3秒 ，黄灯熄灭； 小白智能相机断电 插入复制完固件的存储卡 小白智能相机通电 此时 小白智能相机 状态变为 黄灯常亮，等待固件恢复 直到 小白智能相机 状态变为 黄灯闪烁，并伴有 等待连接提示音 总结 常用设备固件关闭自动更新，避免固件出现bug; 固件可备份一份至云盘，防止企业倒闭，无法找到资源 " />
+  <meta name="author" content="JcyWong" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://iamjcy.life/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/7542634?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/github.svg" />
+  
+  <link rel="preload" as="image" href="https://iamjcy.life/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://iamjcy.life/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://iamjcy.life/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://iamjcy.life/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.121.2">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="小白智能相机云台版故障修复记录">
+<meta itemprop="description" content="背景 周末的时候对小白智能相机云台版进行了重启，结果无法正常运行。现象为黄灯常亮，长按reset键无法恢复出厂设置。
+由于产品历史久远，无法通过售后查找资料，便通过互联网查找到相关资料见链接，变开始了本次折腾记录。
+下载固件 小白智能相机云台版的型号为cmsxj16a，便对照资料获得固件地址为 http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip 通过下载工具将固件下载存放，并解压备用 格式化存储卡 将小白智能相机上的存储卡取下，放入读卡器，并插入电脑；
+通过mac自带的 磁盘工具 将存储卡格式化成 FAT32 文件格式，参数默认即可（Windows用户亦可通过系统右键格式化将存储卡格式化成 FAT32 文件格式）；
+复制固件至存储卡 将固件解压后的tf_recovery.img 和 tf_update.img 两个文件直接复制到存储卡根目录中 操作设备恢复 通过针孔按压 小白智能相机 的 reset 键3秒 ，黄灯熄灭； 小白智能相机断电 插入复制完固件的存储卡 小白智能相机通电 此时 小白智能相机 状态变为 黄灯常亮，等待固件恢复 直到 小白智能相机 状态变为 黄灯闪烁，并伴有 等待连接提示音 总结 常用设备固件关闭自动更新，避免固件出现bug; 固件可备份一份至云盘，防止企业倒闭，无法找到资源 "><meta itemprop="datePublished" content="2024-03-19T23:10:44+08:00" />
+<meta itemprop="dateModified" content="2024-03-19T23:10:44+08:00" />
+<meta itemprop="wordCount" content="43">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="小白智能相机云台版故障修复记录" />
+<meta property="og:description" content="背景 周末的时候对小白智能相机云台版进行了重启，结果无法正常运行。现象为黄灯常亮，长按reset键无法恢复出厂设置。
+由于产品历史久远，无法通过售后查找资料，便通过互联网查找到相关资料见链接，变开始了本次折腾记录。
+下载固件 小白智能相机云台版的型号为cmsxj16a，便对照资料获得固件地址为 http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip 通过下载工具将固件下载存放，并解压备用 格式化存储卡 将小白智能相机上的存储卡取下，放入读卡器，并插入电脑；
+通过mac自带的 磁盘工具 将存储卡格式化成 FAT32 文件格式，参数默认即可（Windows用户亦可通过系统右键格式化将存储卡格式化成 FAT32 文件格式）；
+复制固件至存储卡 将固件解压后的tf_recovery.img 和 tf_update.img 两个文件直接复制到存储卡根目录中 操作设备恢复 通过针孔按压 小白智能相机 的 reset 键3秒 ，黄灯熄灭； 小白智能相机断电 插入复制完固件的存储卡 小白智能相机通电 此时 小白智能相机 状态变为 黄灯常亮，等待固件恢复 直到 小白智能相机 状态变为 黄灯闪烁，并伴有 等待连接提示音 总结 常用设备固件关闭自动更新，避免固件出现bug; 固件可备份一份至云盘，防止企业倒闭，无法找到资源 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iamjcy.life/post/%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%E4%BA%91%E5%8F%B0%E7%89%88%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-19T23:10:44+08:00" />
+<meta property="article:modified_time" content="2024-03-19T23:10:44+08:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="小白智能相机云台版故障修复记录"/>
+<meta name="twitter:description" content="背景 周末的时候对小白智能相机云台版进行了重启，结果无法正常运行。现象为黄灯常亮，长按reset键无法恢复出厂设置。
+由于产品历史久远，无法通过售后查找资料，便通过互联网查找到相关资料见链接，变开始了本次折腾记录。
+下载固件 小白智能相机云台版的型号为cmsxj16a，便对照资料获得固件地址为 http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip 通过下载工具将固件下载存放，并解压备用 格式化存储卡 将小白智能相机上的存储卡取下，放入读卡器，并插入电脑；
+通过mac自带的 磁盘工具 将存储卡格式化成 FAT32 文件格式，参数默认即可（Windows用户亦可通过系统右键格式化将存储卡格式化成 FAT32 文件格式）；
+复制固件至存储卡 将固件解压后的tf_recovery.img 和 tf_update.img 两个文件直接复制到存储卡根目录中 操作设备恢复 通过针孔按压 小白智能相机 的 reset 键3秒 ，黄灯熄灭； 小白智能相机断电 插入复制完固件的存储卡 小白智能相机通电 此时 小白智能相机 状态变为 黄灯常亮，等待固件恢复 直到 小白智能相机 状态变为 黄灯闪烁，并伴有 等待连接提示音 总结 常用设备固件关闭自动更新，避免固件出现bug; 固件可备份一份至云盘，防止企业倒闭，无法找到资源 "/>
+
+  
+  
+  
+  <link rel="canonical" href="https://iamjcy.life/post/%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%E4%BA%91%E5%8F%B0%E7%89%88%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://iamjcy.life"
+      >Jcy&#39;s life</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/Jcy_Wong"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/jcywong"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://iamjcy.life/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">小白智能相机云台版故障修复记录</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 19, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="背景">背景</h1>
+<p>周末的时候对小白智能相机云台版进行了重启，结果无法正常运行。现象为黄灯常亮，长按reset键无法恢复出厂设置。</p>
+<p>由于产品历史久远，无法通过售后查找资料，便通过互联网查找到相关资料见<a href="https://www2.imilab.com/news/221">链接</a>，变开始了本次折腾记录。</p>
+<p><img src="https://pic.iamjcy.life/file/01012ecdd011fd8d3d57f.jpg" alt=""></p>
+<h1 id="下载固件">下载固件</h1>
+<ol>
+<li>小白智能相机云台版的型号为<code>cmsxj16a</code>，便对照资料获得固件地址为 <a href="http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip">http://cdn.cnbj2.fds.api.mi-img.com/chuangmi-cdn/product/ipc016/firmware/IPC016_164.3.4_0503.zip</a></li>
+<li>通过下载工具将固件下载存放，并解压备用</li>
+</ol>
+<h1 id="格式化存储卡">格式化存储卡</h1>
+<ol>
+<li>
+<p>将小白智能相机上的存储卡取下，放入读卡器，并插入电脑；</p>
+</li>
+<li>
+<p>通过mac自带的 磁盘工具 将存储卡格式化成 <code>FAT32</code> 文件格式，参数默认即可（Windows用户亦可通过系统右键格式化将存储卡格式化成 <code>FAT32</code> 文件格式）；</p>
+<p><img src="https://pic.iamjcy.life/file/cebd22379aed395160d33.png" alt=""></p>
+</li>
+</ol>
+<h1 id="复制固件至存储卡">复制固件至存储卡</h1>
+<ol>
+<li>将固件解压后的<code>tf_recovery.img</code> 和 <code>tf_update.img</code> 两个文件直接复制到存储卡根目录中</li>
+</ol>
+<p><img src="https://pic.iamjcy.life/file/3f146f9d7488cec57b0b5.png" alt="Untitled"></p>
+<h1 id="操作设备恢复">操作设备恢复</h1>
+<ol>
+<li>通过针孔按压 小白智能相机 的 reset 键3秒 ，黄灯熄灭；</li>
+<li>小白智能相机断电</li>
+<li>插入复制完固件的存储卡</li>
+<li>小白智能相机通电</li>
+<li>此时 小白智能相机 状态变为 黄灯常亮，等待固件恢复</li>
+<li>直到 小白智能相机 状态变为 黄灯闪烁，并伴有 等待连接提示音</li>
+</ol>
+<h1 id="总结">总结</h1>
+<ol>
+<li>常用设备固件关闭自动更新，避免固件出现bug;</li>
+<li>固件可备份一份至云盘，防止企业倒闭，无法找到资源</li>
+</ol>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://iamjcy.life/post/%E4%BC%98%E5%8C%96%E8%80%81%E6%AC%BEandroidtv%E7%B2%BE%E7%AE%80%E6%8F%90%E9%80%9F%E6%8C%87%E5%8D%97/"
+      ><span>优化老款Android TV：精简提速指南</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://iamjcy.life">Jcy&#39;s life</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
