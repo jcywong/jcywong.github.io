@@ -6,8 +6,15 @@
     <description>Recent content on Jcy&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Mar 2024 23:10:44 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 05 Apr 2024 23:54:32 +0800</lastBuildDate>
     <atom:link href="https://iamjcy.life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>免费畅享GPT3.5，智慧对话，尽享新体验</title>
+      <link>https://iamjcy.life/post/%E5%85%8D%E8%B4%B9%E7%95%85%E4%BA%ABgpt3.5%E6%99%BA%E6%85%A7%E5%AF%B9%E8%AF%9D%E5%B0%BD%E4%BA%AB%E6%96%B0%E4%BD%93%E9%AA%8C/</link>
+      <pubDate>Fri, 05 Apr 2024 23:54:32 +0800</pubDate>
+      <guid>https://iamjcy.life/post/%E5%85%8D%E8%B4%B9%E7%95%85%E4%BA%ABgpt3.5%E6%99%BA%E6%85%A7%E5%AF%B9%E8%AF%9D%E5%B0%BD%E4%BA%AB%E6%96%B0%E4%BD%93%E9%AA%8C/</guid>
+      <description>背景 4月1号起，ChatGPT允许不登录使用，因此就有了无限可能。&#xA;通过2个开源项目（FreeGPT35和ChatGPT-Next-Web），记录搭建过程，分享心得。&#xA;前提： 搬瓦工VPS一台(IP必须是可食用ChatGPT) 域名一个(非必须) linux系统：Docker环境、1Panel面板 API 搭建 以下是两种方式搭建，任选其一即可：&#xA;使用docker命令安装：docker run -p 3040:3040 missuo/freegpt35&#xA;使用1Panel面板：按下图设置即可&#xA;SSL和反向代理 在域名商中设置二级域名解析到vps的IP地址上&#xA;设置SSL，按图设置并修改为自己的域名即可&#xA;设置反向代理，按图设置并修改为自己的域名即可&#xA;网站配置启动https, 按图设置即可&#xA;Next-Web 搭建 以下是两种方式搭建，任选其一即可：&#xA;直接使用docker命令，修改相应内容&#xA;docker run -d -p 3000:3000 \ -e OPENAI_API_KEY=gptyyds \ -e CODE=页面访问密码 \ -e BASE_URL=http://api的地址端口或域名 \ yidadaa/chatgpt-next-web 使用1Panel面板：按下图设置，修改相应内容&#xA;SSL和反向代理 在域名商中设置二级域名解析到vps的IP地址上&#xA;设置SSL，按图设置并修改为自己的域名即可&#xA;设置反向代理，按图设置并修改为自己的域名即可&#xA;网站配置启动https, 按图设置即可&#xA;使用 直接使用网页端 打开网页，登录 密码为next-web中设置的code&#xA;设置接口地址为搭建的API 地址 ，APIkey为任意字符，按下图填写即可&#xA;App使用 我测试的是chatX 按图配置即可，也可使用OpenCat, Lobe-Chat, Bob等&#xA;总结 通过服务的部署，无需使用官方的token就可以使用3.5，这大大方便了我们，也给我们的钱包减压了，最后希望官方不要朝令夕改，哈哈哈</description>
+    </item>
     <item>
       <title>小白智能相机云台版故障修复记录</title>
       <link>https://iamjcy.life/post/%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%E4%BA%91%E5%8F%B0%E7%89%88%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/</link>
